@@ -21,5 +21,9 @@
     };
     let code = prompt('JS to eval:');
     let func = new Function('a', code); //the blank arg is required according to mdn
-    alert(func('a'))
+    try {
+        let res = func('a')
+    } catch(e) {
+        console.error(e.toString())
+    } 
 })();
