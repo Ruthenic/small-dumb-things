@@ -23,6 +23,16 @@
         }
     }; //TODO: use a proxy
     let code = prompt('JS to eval:');
+    let i = 2
+    while (code === "") {
+        console.log("No code passed!")
+        if (i !== 69) {
+            code = prompt(`JS to eval (take ${i.toString()})`)
+        } else {
+            code = prompt(`Put le nice JS here (because 69):`)
+        }
+        i++;
+    }
     let func = new Function('a', code); //the blank arg is required according to mdn
     try {
         let res = func('a')
